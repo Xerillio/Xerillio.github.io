@@ -1,0 +1,108 @@
+body
+{
+	margin: 0;
+}
+
+#div_content
+{
+	position: relative;
+	min-width: 1000px;
+	width: 100%;
+	min-height: 600px;
+	height: 100%;
+	overflow: hidden;
+}
+
+#div_top_left
+{
+	position: absolute;
+	width: 50%;
+	height: 50%;
+}
+
+#div_top_right
+{
+	position: absolute;
+	left: 50%;
+	width: 50%;
+	height: 50%;
+}
+
+#div_bottom_left
+{
+	position: absolute;
+	top: 50%;
+	width: 50%;
+	height: 50%;
+}
+
+#div_bottom_right
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 50%;
+	height: 50%;
+}
+
+#div_overlay
+{
+	position: fixed;
+	top: 10%;
+	left: 25%;
+	width: 50%;
+	height: 80%;
+	/*text-align: center;*/
+	/*overflow: -moz-scrollbars-vertical;*/
+	/*overflow-y: scroll;*/
+}
+
+#theme_box_content1
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ff0000;
+}
+
+#theme_box_content2
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #00ff00;
+}
+
+#theme_box_content3
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #0000ff;
+}
+
+#theme_box_content4
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ffff00;
+}
+
+#theme_box_content5
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ff00ff;
+}
