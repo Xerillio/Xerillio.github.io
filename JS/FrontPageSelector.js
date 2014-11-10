@@ -11,9 +11,13 @@ jQuery(document).ready(function($) {
 							 $('#div_overlay').css("left"),
 							 $('#div_overlay').css("width"),
 							 $('#div_overlay').css("height")];
-		var newContent = $(this).html();
-		var oldContent = $('#div_overlay').html();
+		var newContent = $(this).children(":first").html();
+		var oldContent = $('#div_overlay').children(":first").html();
 		var clickedObj = this;
+		
+		var overlayTop = $('#div_overlay').offset().top;
+		var overlayHeight = $('#div_overlay').height();
+		var scrollToPos = window.innerHeight < overlayHeight ? overlayTop : overlayTop - (window.innerHeight - overlayHeight) / 2;
 		
 		$('#div_overlay').animate({
 			position: $(clickedObj).css("position"),
@@ -21,9 +25,9 @@ jQuery(document).ready(function($) {
 			left: $(clickedObj).css("left"),
 			width: $(clickedObj).css("width"),
 			height: $(clickedObj).css("height")
-		}, 1000, function() {
-			$('#div_overlay').html(newContent);
-			$(clickedObj).html(oldContent);
+		}, 750, function() {
+			$('#div_overlay').children(":first").html(newContent);
+			$(clickedObj).children(":first").html(oldContent);
 			
 			$('#div_overlay').animate({
 				position: originalStyle[0],
@@ -31,10 +35,16 @@ jQuery(document).ready(function($) {
 				left: originalStyle[2],
 				width: originalStyle[3],
 				height: originalStyle[4]
-			}, 1000, function() {
+			}, 750, function() {
 				$('#div_overlay').removeAttr('style');
 				hasClicked = false;
 			});
+			
+			if ($(document).scrollTop() > scrollToPos){
+				$('html, body').animate({
+					scrollTop: scrollToPos
+				}, 750);
+			}
 		});
 	});
 	
